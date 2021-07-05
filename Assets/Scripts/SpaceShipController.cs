@@ -41,8 +41,16 @@ public class SpaceShipController : MonoBehaviour
                 Fire1();
             }
         }
+       
 
         // 課題: ここに右クリックまたは左 Alt (Fire2) で弾を発射するようコードを追加せよ
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<EnemyController>()) 
+        {
+            m_anim.Play("dameged");
+        }
     }
 
     /// <summary>
